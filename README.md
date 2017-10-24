@@ -1,5 +1,5 @@
 # baseClassQtso
-Simple helper class/library to manage errors using QStrings
+Simple helper C++ class/library to manage errors using QStrings
 
 Compilation
 -----------
