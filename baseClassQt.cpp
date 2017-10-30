@@ -7,7 +7,7 @@ namespace eines {
 QString baseClassQt_c::getError_f()
 {
     QString tmp(errorStr_pri);
-    tmp.swap(errorStr_pri);
+    errorStr_pri.clear();
     return tmp;
 }
 void baseClassQt_c::setError_f(const QString& error_par_con)
