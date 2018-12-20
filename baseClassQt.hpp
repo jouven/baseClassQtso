@@ -1,12 +1,14 @@
 #ifndef BASECLASSQTSO_BASECLASSQT_HPP
 #define BASECLASSQTSO_BASECLASSQT_HPP
 
+#include "crossPlatformMacros.hpp"
+
 #include <QString>
 
 namespace eines
 {
 
-class baseClassQt_c
+class EXPIMP_BASECLASSQTSO baseClassQt_c
 {
         QString errorStr_pri;
 protected:
