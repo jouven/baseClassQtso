@@ -5,9 +5,6 @@
 
 #include <QString>
 
-namespace eines
-{
-
 class EXPIMP_BASECLASSQTSO baseClassQt_c
 {
         QString errorStr_pri;
@@ -31,5 +28,4 @@ public:
 
 };
 
-}
 #endif // BASECLASSQTSO_BASECLASSQT_HPP

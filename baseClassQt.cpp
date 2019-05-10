@@ -2,7 +2,6 @@
 
 #include <utility>
 
-namespace eines {
 
 QString baseClassQt_c::getError_f()
 {
@@ -53,4 +52,3 @@ bool baseClassQt_c::anyError_f() const
     return not errorStr_pri.isEmpty();
 }
 
-}
