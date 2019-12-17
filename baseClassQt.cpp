@@ -1,17 +1,14 @@
 #include "baseClassQt.hpp"
 
-#include <utility>
-
-
-QString baseClassQt_c::getError_f()
+textCompilation_c baseClassQt_c::getErrors_f()
 {
-    QString tmp(errorStr_pri);
-    errorStr_pri.clear();
+    textCompilation_c tmp(errors_pri);
+    errors_pri.clear_f();
     return tmp;
 }
-void baseClassQt_c::setError_f(const QString& error_par_con)
+void baseClassQt_c::setErrors_f(const textCompilation_c& errors_par_con)
 {
-    errorStr_pri = error_par_con;
+    errors_pri = errors_par_con;
 }
 void baseClassQt_c::appendError_f(
     QString& str_par,
@@ -32,23 +29,17 @@ void baseClassQt_c::appendError_f(
 }
 
 void baseClassQt_c::appendError_f(
-    const QString& error_par_con
-    , const QString& separator_par_con)
+    const text_c& error_par_con
+    )
 {
-    if (errorStr_pri.isEmpty())
+    if (error_par_con.empty_f())
     {
-        errorStr_pri
-        .append(error_par_con);
-    }
-    else
-    {
-        errorStr_pri
-        .append(separator_par_con)
-        .append(error_par_con);
+        errors_pri
+        .append_f(error_par_con);
     }
 }
 bool baseClassQt_c::anyError_f() const
 {
-    return not errorStr_pri.isEmpty();
+    return not errors_pri.empty_f();
 }
 

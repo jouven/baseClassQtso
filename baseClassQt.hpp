@@ -3,20 +3,19 @@
 
 #include "crossPlatformMacros.hpp"
 
-#include <QString>
+#include "textQtso/text.hpp"
 
 class EXPIMP_BASECLASSQTSO baseClassQt_c
 {
-        QString errorStr_pri;
+        textCompilation_c errors_pri;
 protected:
-        void setError_f(const QString& error_par_con);
+        void setErrors_f(const textCompilation_c& errors_par_con);
         void appendError_f(
-            const QString& error_par_con
-            , const QString& separator_par_con = "\n"
+            const text_c& error_par_con
         );
 public:
         //return the error, clears the internal error variable (errorStr_pri)
-        QString getError_f();
+        textCompilation_c getErrors_f();
 
         static void appendError_f(
             QString& str_par,
@@ -25,7 +24,6 @@ public:
         );
 
         bool anyError_f() const;
-
 };
 
 #endif // BASECLASSQTSO_BASECLASSQT_HPP

@@ -30,6 +30,48 @@ HEADERS += \
     baseClassQt.hpp \
     crossPlatformMacros.hpp
 
+!win32:MYPATH = "/"
+win32:MYPATH = "H:/veryuseddata/portable/msys64/"
+
+#mine
+INCLUDEPATH += $${MYPATH}home/jouven/mylibs/include
+
+if (!android){
+#don't new line the "{"
+#release
+CONFIG(release, debug|release){
+    LIBS += -L$${MYPATH}home/jouven/mylibs/release/
+    DEPENDPATH += $${MYPATH}home/jouven/mylibs/release
+    QMAKE_RPATHDIR += $${MYPATH}home/jouven/mylibs/release
+}
+#debug
+CONFIG(debug, debug|release){
+    LIBS += -L$${MYPATH}home/jouven/mylibs/debug/
+    DEPENDPATH += $${MYPATH}home/jouven/mylibs/debug
+    QMAKE_RPATHDIR += $${MYPATH}home/jouven/mylibs/debug
+    DEFINES += DEBUGJOUVEN
+}
+
+}
+
+if (android){
+#release
+CONFIG(release, debug|release){
+    LIBS += -L$${MYPATH}home/jouven/mylibsAndroid/release/
+    DEPENDPATH += $${MYPATH}home/jouven/mylibsAndroid/release
+    QMAKE_RPATHDIR += $${MYPATH}home/jouven/mylibsAndroid/release
+}
+#debug
+CONFIG(debug, debug|release){
+    LIBS += -L$${MYPATH}home/jouven/mylibsAndroid/debug/
+    DEPENDPATH += $${MYPATH}home/jouven/mylibsAndroid/debug
+    QMAKE_RPATHDIR += $${MYPATH}home/jouven/mylibsAndroid/debug
+    DEFINES += DEBUGJOUVEN
+
+}
+
+}
+
 QMAKE_CXXFLAGS_DEBUG -= -g
 QMAKE_CXXFLAGS_DEBUG += -pedantic -Wall -Wextra -g3
 
