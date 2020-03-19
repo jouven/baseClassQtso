@@ -38,6 +38,11 @@ void baseClassQt_c::appendError_f(
         .append_f(error_par_con);
     }
 }
+
+void baseClassQt_c::appendErrors_f(const textCompilation_c& errors_par_con)
+{
+    errors_pri.append_f(errors_par_con);
+}
 bool baseClassQt_c::anyError_f() const
 {
     return not errors_pri.empty_f();

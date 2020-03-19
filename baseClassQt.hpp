@@ -13,6 +13,8 @@ protected:
         void appendError_f(
             const text_c& error_par_con
         );
+        void appendErrors_f(const textCompilation_c& errors_par_con
+        );
 public:
         //return the error, clears the internal error variable (errorStr_pri)
         textCompilation_c getErrors_f();
