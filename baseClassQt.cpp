@@ -32,7 +32,7 @@ void baseClassQt_c::appendError_f(
     const text_c& error_par_con
     )
 {
-    if (error_par_con.empty_f())
+    if (not error_par_con.empty_f())
     {
         errors_pri
         .append_f(error_par_con);
